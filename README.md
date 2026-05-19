@@ -6,7 +6,7 @@ count tables.
 
 Upstream SRF has no semantic release tag or runtime version flag. This app
 therefore packages the upstream HEAD commit
-`e54ca8c8eccf6b1f19428b0f862f2c90575290a0` as `srf 20240109-r1`. The version
+`e54ca8c8eccf6b1f19428b0f862f2c90575290a0` as `srf 20240109-r2`. The version
 is the commit date in Asia/Shanghai time; the same commit is
 `2024-01-08T21:02:55Z` in UTC.
 
@@ -15,11 +15,15 @@ Package metadata:
 ```text
 name: srf
 command: taf-srf
-version: 20240109-r1
+version: 20240109-r2
 kind: tool
-image: ghcr.io/taffish/srf:20240109-r1
+image: ghcr.io/taffish/srf:20240109-r2
 upstream commit: e54ca8c8eccf6b1f19428b0f862f2c90575290a0
 ```
+
+Release `20240109-r2` is a help-only/docs-only correction for the TAFFISH
+wrapper help. It keeps the same upstream SRF commit, Dockerfile, runtime
+dependencies, smoke coverage, and command behavior as `20240109-r1`.
 
 ## Quick Start
 
@@ -218,7 +222,7 @@ Useful checks before publishing:
 taf check
 taf compile -- -p sample count.txt
 taf publish --release --dry-run
-docker build -t ghcr.io/taffish/srf:20240109-r1 -f docker/Dockerfile .
-docker run --rm ghcr.io/taffish/srf:20240109-r1 srf
-docker run --rm ghcr.io/taffish/srf:20240109-r1 srfutils.js
+docker build -t ghcr.io/taffish/srf:20240109-r2 -f docker/Dockerfile .
+docker run --rm ghcr.io/taffish/srf:20240109-r2 srf
+docker run --rm ghcr.io/taffish/srf:20240109-r2 srfutils.js
 ```
